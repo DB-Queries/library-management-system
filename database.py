@@ -1,7 +1,6 @@
 '''
-    This is a program to make predictions for the prices of cars.
-    I use various models to make predictions and gauge the accuracy of each
-    Tools: Random Forest, Gradient Boosting, SARIMA, ARIMA,
+    This is a simple library management system: uses mySQL
+    and interfaces with python
 '''
 
 import mysql.connector
