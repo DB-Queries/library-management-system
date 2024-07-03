@@ -1,5 +1,5 @@
-create database librarydb;
-use librarydb;
+CREATE DATABASE LibraryDB;
+USE LibraryDB;
 
 -- Create Authors table with extended fields
 CREATE TABLE Authors (
