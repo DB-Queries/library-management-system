@@ -1,6 +1,6 @@
 # Library Management System (LMS)
 LMS to cater for the diverse needs of librarians, authors and readers; provides a robust platform to manage books, authors, members, loans and reservations.
-This program comes with advanced features such as fine calculation, loan period extensions and reservation management ensuring a seamless library experience.It is 
+This program comes with advanced features such as **fine calculation, loan period extensions and reservation management** ensuring a seamless library experience.It is 
 designed to streamline library operations, enhance the user experience and ensure efficient management of library resources. This project involves creating a MySQL 
 database to handle various library functionalities, from managing book and author details to handling loans and reservations.
 
