@@ -1,56 +1,131 @@
-# Library Management System (LMS)
-LMS to cater for the diverse needs of librarians, authors and readers; provides a robust platform to manage books, authors, members, loans and reservations.
-This program comes with advanced features such as **fine calculation, loan period extensions and reservation management** ensuring a seamless library experience.It is 
-designed to streamline library operations, enhance the user experience and ensure efficient management of library resources. This project involves creating a MySQL 
-database to handle various library functionalities, from managing book and author details to handling loans and reservations.
+# Library Database Management System
 
-## Feature List
+## Overview
 
-1. **Book Management**:
-   - Add, update, and delete books
-   - Search books by title, author, genre, and publication year
-   - View book details, including language, edition, and description
-   <br>
-2. **Author Management**:
-   - Add, update, and delete authors
-   - View author details, including birthdate, country, and bio
-   <br>
-3. **Member Management**:
-   - Add, update, and delete members
-   - Manage member information, including membership type and status
-   <br>
-4. **Loan Management**:
-   - Record and manage book loans
-   - Calculate and update fines for overdue loans
-   - Extend loan periods
-   <br>
-5. **Reservation Management**:
-   - Reserve books and manage reservation statuses
-   - Notify members when reserved books are available
-<br>
-<img src="https://github.com/mrowurakwarteng/library-management-system/blob/main/ERD.png"><br>
+The Library Database Management System (LibraryDB) is a comprehensive SQL-based project designed to manage library 
+operations effectively. This system includes functionalities for managing authors, books, members, loans, and 
+reservations. Additionally, it incorporates advanced SQL features such as functions, stored procedures, events, 
+and triggers to automate and streamline library management tasks.
 
-# Future Enhancements
-For the purposes of a fully functional platform, this project can be further developed to include these futures:
+## Features
 
-### Web or Desktop Application
-- Develop a user-friendly interface to facilitate easier interaction with the library database.
-- Create a responsive and intuitive web interface; use frameworks to create a cross-platform desktop application
+- **Author Management**: Store and manage detailed information about authors.
+- **Book Management**: Keep track of books, including details about genre, publication year, ISBN, and more.
+- **Member Management**: Handle member data, including personal details and membership status.
+- **Loan Management**: Manage book loans, including loan dates, due dates, return dates, and fines.
+- **Reservation Management**: Allow members to reserve books and manage reservation statuses.
+- **Automated Processes**: Use events, functions, and triggers to automate tasks such as fine calculation and reservation expiry.
 
-### Automated Notifications
-- Implement automated notification systems to keep members informed about their loans, reservations and membership statuses.
-- Integrate notification triggers for events such as overdue books, reservation availability and membership renewals.
+## Project Structure
 
-### Data Analytics
-- Provide insights into library operations through data analysis and visualization.
-- Use tools like Tableau, Power BI or others to create interactive dashboards and reports.
+The project is organized as follows:
 
-### Mobile Application
-- Offer members the convenience of accessing library services on-the-go.
-- Develop a cross-platform mobile application; include features like book search, reservations, loan management, and notifications.
+```
+library-database/
+├── sql/
+│   ├── librarydb.sql
+│   ├── functions.sql
+│   ├── events.sql
+│   ├── procedures.sql
+│   ├── triggers.sql
+├── images/
+│   ├── ERD.png
+├── README.md
+```
 
-### API Integration
-- Enable third-party applications to interact with the LMS database.
-- Develop RESTful APIs; ensure secure and efficient data exchange between LMS and external systems.
+### File Descriptions
 
-------
+- **librarydb.sql**: Contains SQL commands to create the database and tables, and to insert sample data.
+- **functions.sql**: Contains SQL commands to create stored functions for the database.
+- **events.sql**: Contains SQL commands to create events for automated tasks within the database.
+- **procedures.sql**: Contains SQL commands to create stored procedures for complex operations in the database.
+- **triggers.sql**: Contains SQL commands to create triggers that automatically perform actions in response to database changes.
+- **images/ERD.png**: Contains the image for the ERD
+- **README.md**: Provides an overview of the project, setup instructions, and usage information.
+
+
+### Database Schema
+
+The LibraryDB database schema is designed to capture all necessary information related to the library's operations. 
+An Entity-Relationship Diagram (ERD) is included to illustrate the relationships between different entities in the 
+database.
+
+#### ERD
+
+The ERD includes the following tables:
+
+- **Authors**: Stores detailed information about authors.
+- **Books**: Contains information about books, including their authors, genres, and publication details.
+- **Members**: Stores member details, including personal information and membership status.
+- **Loans**: Manages book loans, tracking loan dates, due dates, and fines.
+- **Reservations**: Handles book reservations, tracking reservation dates and statuses.
+
+<img src="https://github.com/mrowurakwarteng/library-management-system/blob/main/images/ERD.png">
+
+### Sample Data
+
+The database includes sample data for authors, books, members, loans, and reservations to help you get started quickly.
+
+### Functions
+
+Functions are used to perform specific operations within the database. Two key functions are provided:
+
+- **AddReservation**: Adds a new reservation for a book by a member.
+- **ExpireReservation**: Updates the status of a reservation to 'Expired'.
+
+### Events
+
+Events automate recurring tasks within the database. One key event is provided:
+
+- **DailyFineCalculation**: Calculates fines for overdue loans on a daily basis.
+
+### Procedures
+
+Stored procedures perform complex operations that might require multiple SQL statements. Two key procedures are provided:
+
+- **CalculateFine**: Calculates fines for overdue books.
+- **ExtendLoan**: Extends the loan period for a book.
+
+### Triggers
+
+Triggers are used to automatically perform actions in response to certain changes in the database. One key trigger is 
+provided:
+
+- **ExpireReservationsTrigger**: Automatically expires reservations that are past their pickup date.
+
+## Setup Instructions
+
+To set up the LibraryDB system, follow these steps:
+
+1. **Create the Database and Tables**:
+    - Execute the SQL commands in `librarydb.sql` to create the database and tables.
+    
+2. **Insert Sample Data**:
+    - Insert sample data using the provided SQL commands in `librarydb.sql` to populate the database with initial records.
+
+3. **Create Functions, Events, Procedures, and Triggers**:
+    - Execute the SQL commands in `functions.sql`, `events.sql`, `procedures.sql`, and `triggers.sql` to create the necessary 
+      functions, events, procedures, and triggers.
+
+4. **Verify the Setup**:
+    - Verify the setup by querying the tables and checking the data to ensure everything is working correctly.
+
+## Usage
+
+Once the database is set up, you can perform various operations such as:
+
+- Adding new authors, books, and members.
+- Recording book loans and returns.
+- Managing book reservations.
+- Automatically calculating fines for overdue books.
+- Extending loan periods for members.
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository and submit a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License: [LICENSE.md](LICENSE.md).
+
+---
